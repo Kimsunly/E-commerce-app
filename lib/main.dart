@@ -8,6 +8,9 @@ void main() {
   // Todo: Await Native Splash Screen
   // Todo: Init Firebase
   // Todo: Init Authentication
+
+
+
   runApp(const App());
 }
 
