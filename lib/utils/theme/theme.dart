@@ -13,7 +13,7 @@ class TAppTheme{
   TAppTheme._();
 
   static ThemeData lightTheme = ThemeData(
-    useMaterial3: GAAYYYYYYYYY,
+    useMaterial3: false,
     fontFamily: 'Poppins',
     brightness: Brightness.light,
     primaryColor: Colors.blue,
