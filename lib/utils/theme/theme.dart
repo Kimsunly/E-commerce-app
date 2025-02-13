@@ -9,8 +9,6 @@ import 'custom_themes/text_theme.dart';
 import 'custom_themes/elevated_button_theme.dart';
 
 
-
-
 class TAppTheme{
   TAppTheme._();
 
@@ -29,6 +27,8 @@ class TAppTheme{
     outlinedButtonTheme: TOutlinedButtonTheme.lightOutlinedButtonTheme,
     inputDecorationTheme: TTextFromFieldTheme.lightInputDecorationTheme,
   );
+
+
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
     fontFamily: 'Poppins',
