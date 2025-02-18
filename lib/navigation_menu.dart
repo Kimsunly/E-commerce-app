@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
-
-class  NavigationMenu extends StatelessWidget {
+class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-     bottomNavigationBar: NavigationBar(
-      destinations: [
-        const NavigationDestination(icon: icon(Iconsax.home), label: 'Home      ')
-        Container(color: Colors.green,),
-        Container(color: Colors.cyan,),
-        Container(color: Colors.deepPurple,),
-        Container(color: Colors.orange),
-      ],
-     ),
+    return Scaffold(
+      bottomNavigationBar: NavigationBar(
+        destinations: const [
+          NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
+          NavigationDestination(icon: Icon(Iconsax.shop), label: 'Label'),
+          NavigationDestination(icon: Icon(Iconsax.heart), label: 'Wishlist'),
+          NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
+        ],
+      ),
     );
   }
 }
