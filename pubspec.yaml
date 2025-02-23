@@ -26,7 +26,6 @@ dependencies:
   # State Management
   get: ^4.3.8
   get_storage: ^2.1.1
-  flutter_gif: ^0.0.4
 #---------------------------- ./ PACKAGES END -------------------------#
 
 dev_dependencies:
@@ -43,10 +42,7 @@ flutter:
     - assets/logos/
     - assets/images/on_boarding_images/
     - assets/images/
-    - assets/logos/Sneaker_logo_Black_noBG.png
-    - assets/logos/Sneaker_logo_white_noBG.png
-    - assets/images/on_boarding_images/
-
+    - assets/logos/
 
   fonts:
     - family: Poppins
