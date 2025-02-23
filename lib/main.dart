@@ -1,29 +1,42 @@
-import 'package:e_commerce_app/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
-import 'app.dart';  // Import the App widget
-import 'navigation_menu.dart';  // Import the NavigationMenu widget
+import 'common/widget/custom_shapes/curved_edges/curved_edge_widget.dart';
+  // Import your widget file here
 
 void main() {
-  // Todo: Add widgets binding
-  // Todo: Init Local storage
-  // Todo: Await Native Splash Screen
-  // Todo: Init Firebase
-  // Todo: Init Authentication
-
-  runApp(const MyApp());  // Run the app
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'E-Commerce App',
+      title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const NavigationMenu(),  // Set NavigationMenu as the main screen
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Curved Edge Widget Example'),
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              TPrimaryHeaderContainer(
+                child: Center(
+                  child: Text(
+                    'Hello, Curved Header!',
+                    style: TextStyle(
+                      fontSize: 24,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+              // Add more content below as needed
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
