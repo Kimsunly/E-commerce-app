@@ -15,8 +15,8 @@ class OnBoardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(OnBoardingController());
 
-    return Scaffold(
-        body: Stack(children: [
+    return Scaffold(body: Stack(
+            children: [
       /// Horizontal Scrollable pages
       PageView(
         controller: controller.pageController,
