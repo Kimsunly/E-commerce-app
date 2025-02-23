@@ -47,3 +47,6 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
+class CustomHeaderClipper {
+}
+
