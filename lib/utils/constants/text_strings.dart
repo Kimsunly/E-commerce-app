@@ -49,11 +49,16 @@ class TTexts{
   static const String changeYourPasswordTitle = "Password Reset Email Sent";
   static const String changeYourPasswordSubtitle = "We've sent you a password reset secure link to your email";
   static const String confirmEmail = "Verify your email address";
-  static const String confirmEmailSubtitle = "We've sent you a verification email to your email address";
+  static const String confirmEmailSubtitle = "We've sent you a verification email to your email address.";
   static const String emailNotReceiveMessage = "Didn't receive the email? Check your spam filter, or try again later";
   static const String yourAccountCreatedTitle = "Your account has been successfully created";
   static const String yourAccountCreatedSubtitle = "Welcome to our app, we're glad to have you here with us and we hope you enjoy your shopping experience";
 
+  static const String and = "and";
+  static const String tContinue = "Continue";
+  static const String tSkip = "Skip";
+  static const String submit = "Submit";
+  static const String done = "Done";
 
 
 

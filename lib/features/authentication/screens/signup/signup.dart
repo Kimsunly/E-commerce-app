@@ -1,39 +1,38 @@
-import 'package:e_commerce_app/common/styles/spacing_styles.dart';
 import 'package:e_commerce_app/common/widgets/login_signup/form_divider.dart';
-import 'package:e_commerce_app/features/authentication/screens/login/widgets/login_form.dart';
-import 'package:e_commerce_app/features/authentication/screens/login/widgets/login_header.dart';
 import 'package:e_commerce_app/common/widgets/login_signup/social_button.dart';
-import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
+import 'package:e_commerce_app/features/authentication/screens/signup/widgets/signup_form.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/constants/text_strings.dart';
+import '../../../../utils/helpers/helper_functions.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatelessWidget {
+  const SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
     return Scaffold(
+      appBar: AppBar(),
       body: SingleChildScrollView(
         child: Padding(
-          padding: TSpacingStyles.paddingWithAppBarHeight,
+          padding: EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
             children: [
-              /// Logo, Title, and Subtitle
-              TLoginHeader(dark: dark),
+              /// Title
+              Text(TTexts.signupTitle,
+                  style: Theme.of(context).textTheme.headlineMedium),
+              const SizedBox(height: TSizes.spaceBtwInputFields),
 
               /// Form
-              TLoginForm(),
-
+              TSignupForm(),
+              const SizedBox(height: TSizes.spaceBtwSections),
               /// Divider
               TFromDivider(dividerText: TTexts.orSignUpWith.capitalize!),
+
               const SizedBox(height: TSizes.spaceBtwSections),
-
-              /// Footer
+              /// Social  Buttons
               TSocialButtons(),
-
             ],
           ),
         ),
@@ -41,7 +40,5 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
-
-
 
 
