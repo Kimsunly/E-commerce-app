@@ -16,8 +16,8 @@ class TTexts{
   static const String onBoardingSubtitle3 = "Deliver to your door and enjoy";
 
   // -- Home Texts
-  static const String homeAppbarTitle = "Have a nice day!";
-  static const String homeAppbarSubTitle = "Explore your favourite products";
+  static const String homeAppbarTitle = "Good Moring All Ma Niggas";
+  static const String homeAppbarSubTitle = "Good Moring All Ma Niggas";
 
  // -- Authentication Form Texts
   static const String firstName = "First Name";
