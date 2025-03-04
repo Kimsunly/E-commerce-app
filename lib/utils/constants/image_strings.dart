@@ -9,4 +9,17 @@ class TImage{
   // -- Social Logos
   static const String googleLogo = 'assets/logos/google-icon.png';
   static const String facebookLogo = 'assets/logos/facebook-icon.png';
+
+  // -- OnBoarding Images
+  static const String onBoardingImage1 = 'assets/images/on_boarding_images/searching.png';
+  static const String onBoardingImage2 = 'assets/images/on_boarding_images/shopping.png';
+  static const String onBoardingImage3 = 'assets/images/on_boarding_images/delivery.png';
+
+  // -- Animation Images
+  static const String productIllustration = 'assets/images/animations/sammy-line-workout.gif';
+  static const String productSaleIllustration = 'assets/images/animations/sammy-line-sale.png';
+  static const String staticSuccessIllustration = 'assets/images/animations/sammy-line-success.png';
+  static const String deliveredInPlaneIllustration = 'assets/images/animations/sammy-line-come-back-later.png';
+  static const String deliveredEmailIllustration = 'assets/images/animations/sammy-line-man-receives-a-mail.png';
+  static const String verifyEmailIllustration  = 'assets/images/animations/sammy-line-travel-backpack-with-passport-and-air-ticket.gif';
 }

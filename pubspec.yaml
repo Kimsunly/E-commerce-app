@@ -42,8 +42,8 @@ flutter:
     - assets/logos/
     - assets/images/on_boarding_images/
     - assets/images/
-    - assets/logos/Sneaker_logo_Black_noBG.png
-    - assets/logos/Sneaker_logo_white_noBG.png
+    - assets/logos/
+    - assets/images/animations/
 
   fonts:
     - family: Poppins
