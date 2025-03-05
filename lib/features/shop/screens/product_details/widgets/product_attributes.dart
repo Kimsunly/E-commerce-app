@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:t_store/common/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:t_store/utils/constants/colors.dart';
+import "package:t_store/utils/constants/colors.dart";
 import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/helpers/helper_functions.dart';
 import '../../../common/widgets/texts/section_heading.dart';
 import '../../../utils/constants/sizes.dart';
-import '../../../utils/helpers/helper_functions.dart';
-import '../TEST_Flutter/flutter/packages/flutter/lib/rendering.dart';
+import 'package:e_commerce_app/features/shop/utils/helpers/helper_functions.dart';
+import 'package:e_commerce_app/features/shop/screens/product_details/TEST_Flutter/flutter/packages/flutter/lib/rendering.dart';
 
 class TProductAttributes extends StatelessWidget {
   const TProductAttributes({super.key});
@@ -102,4 +102,12 @@ class TProductAttributes extends StatelessWidget {
       ],
     );
   }
+}
+
+class TProductTitleText {
+  const TProductTitleText({required String title, required bool smallSize});
+}
+
+class TSectionHeading {
+  const TSectionHeading();
 }
