@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../../common/widget/appbar/appbar.dart';
+import '../../../../utils/constants/colors.dart';
+import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/helpers/helper_functions.dart'; // Make sure to import necessary Flutter packages
 
 class CheckoutScreen extends StatelessWidget {

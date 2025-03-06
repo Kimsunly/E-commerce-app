@@ -22,4 +22,12 @@ class TImage{
   static const String deliveredInPlaneIllustration = 'assets/images/animations/sammy-line-come-back-later.png';
   static const String deliveredEmailIllustration = 'assets/images/animations/sammy-line-man-receives-a-mail.png';
   static const String verifyEmailIllustration  = 'assets/images/animations/sammy-line-travel-backpack-with-passport-and-air-ticket.gif';
+
+  //Catogories Icon
+  static const String nikelogo = "assets/icons/brands/nike.png";
+  static const String adidas = 'assets/icons/brands/adidas.png';
+  static const String puma = 'assets/icons/brands/puma.png';
+  static const String newbalance= 'assets/icons/brands/new_balance.png';
+  static const String jordan = 'assets/icons/brands/jrodan.png';
+  static const String asics = 'assets/icons/brands/asics.png';
 }

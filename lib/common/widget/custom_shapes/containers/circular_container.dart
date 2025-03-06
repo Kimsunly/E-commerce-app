@@ -14,8 +14,8 @@ class TCircularContainer extends StatelessWidget {
     this.backgroundColor = TColors.white,
   });
 
-  final double width;
-  final double height;
+  final double? width;
+  final double? height;
   final double radius;
   final double padding;
   final Widget? child;
