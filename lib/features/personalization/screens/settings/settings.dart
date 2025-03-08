@@ -1,6 +1,8 @@
 import "package:flutter/material.dart";
-
-import ...
+import "../../../../common/widget/appbar/appbar.dart";
+import "../../../../common/widget/custom_shapes/containers/primary_header_container.dart";
+import "../../../../utils/constants/colors.dart";
+import "../../../../utils/constants/sizes.dart";
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -19,6 +21,9 @@ class SettingsScreen extends StatelessWidget {
                   TAppBar(title: Text('Account', style: Theme.of(context).textTheme.headlineMedium!.apply(color: TColors.white))),
 
                   /// User Profile Card
+                  ListTile(
+                    leading: TCircularImage(,
+                  ),
                   const TuserProfiletitle(), // ListTile
 
                   const SizedBox(height: TSizes.spaceBtwSections),
@@ -28,7 +33,7 @@ class SettingsScreen extends StatelessWidget {
 
             /// -- Body
             const Padding (
-              padding: EdgeInsets.all(TSize.defaultspace).
+              padding: EdgeInsets.all(TSizes.defaultSpace);
                 child: column (
                  /// Account setting
                  
@@ -53,4 +58,4 @@ class TuserProfiletitle extends StatelessWidget {
   const TuserProfiletitle({
     super.key,
   });
-
+}
