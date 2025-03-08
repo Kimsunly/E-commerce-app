@@ -1,6 +1,9 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_commerce_app/common/widget/appbar/appbar.dart';
+import 'package:e_commerce_app/common/widget/custom_shapes/containers/circular_container.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widget/home_appbar.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widget/home_categories.dart';
+import 'package:e_commerce_app/features/shop/screens/home/widget/promo_slider.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
@@ -8,6 +11,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../common/widget/custom_shapes/containers/primary_header_container.dart';
 import '../../../../common/widget/custom_shapes/containers/search_container.dart';
+import '../../../../common/widget/image/t_rounded_image.dart';
 import '../../../../common/widget/image_text_widgets/vertical_image_text.dart';
 import '../../../../common/widget/text/sections_heading.dart';
 import '../../../../utils/constants/sizes.dart';
@@ -31,7 +35,7 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(height: 10),
 
                   // Search Bar
-                  TSearchContainer(text: 'Fcking search here',), // Fixed text
+                  TSearchContainer(text: 'Fcking search here'), // Fixed text
                   SizedBox(height: 20),
 
                   // CATEGORIES SECTION
@@ -56,6 +60,12 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
+            ),
+
+            // Body Section with Image
+            Padding(
+              padding:  EdgeInsets.all(TSizes.defaultSpace),
+              child: TPromoSlider(banners: [TImage.banner1,TImage.banner2,TImage.banner3,TImage.banner4],)
             ),
           ],
         ),
