@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'app.dart';
 
 void main() {
-  
+
   // Todo: Add widgets binding
   // Todo: Init Local storage
   // Todo: Await Native Splash Screen
