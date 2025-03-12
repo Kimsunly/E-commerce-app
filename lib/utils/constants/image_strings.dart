@@ -31,15 +31,14 @@ class TImage{
   static const String jordan = 'assets/icons/brands/jrodan.png';
   static const String asics = 'assets/icons/brands/asics.png';
 
-  //banners
   static const String banner1 = 'assets/images/banners/Nike_banner.jpg';
   static const String banner2 = 'assets/images/banners/Black-Friday_web_banner_01.jpg';
   static const String banner3 = 'assets/images/banners/banner_3.jpg';
   static const String banner4 = 'assets/images/banners/1877.jpg';
 
+  // Products
+  static const String product1 = 'assets/images/products/product1.jpg';
 
 
-  //product
-  static const String nikeaf1 = "assets/images/products/Nike/Style/AIR+FORCE+1+'07.png" ;
 
 }
