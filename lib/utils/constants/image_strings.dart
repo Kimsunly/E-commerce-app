@@ -30,4 +30,7 @@ class TImage{
   static const String newbalance= 'assets/icons/brands/new_balance.png';
   static const String jordan = 'assets/icons/brands/jrodan.png';
   static const String asics = 'assets/icons/brands/asics.png';
+
+  // Product
+  static const String product1 = 'assets/images/products/product1.png';
 }
