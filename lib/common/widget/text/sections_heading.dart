@@ -5,7 +5,7 @@ import '../../../utils/constants/sizes.dart';
 
 class TSectionHeading extends StatelessWidget {
   const TSectionHeading({
-    super.key, this.textColor = Colors.white, this.showActionButton = true, required this.title, this.buttonTitle= 'View All', this.onPressed,
+    super.key, this.textColor = Colors.white, this.showActionButton = false,  this.title= 'Popular Kicks', this.buttonTitle= 'View All', this.onPressed,
   });
 
   final Color? textColor ;
