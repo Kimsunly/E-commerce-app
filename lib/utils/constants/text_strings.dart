@@ -54,6 +54,7 @@ class TTexts{
   static const String yourAccountCreatedTitle = "Your account has been successfully created";
   static const String yourAccountCreatedSubtitle = "Welcome to our app, we're glad to have you here with us and we hope you enjoy your shopping experience";
 
+
   static const String and = "and";
   static const String tContinue = "Continue";
   static const String tSkip = "Skip";
