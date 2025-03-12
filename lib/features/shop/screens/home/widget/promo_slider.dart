@@ -12,7 +12,7 @@ import '../../../../../utils/constants/sizes.dart';
 
 class TPromoSlider extends StatelessWidget {
   const TPromoSlider({
-    super.key,  this.banners,
+    super.key,  required this.banners,
   });
 
   final List<String> banners;
