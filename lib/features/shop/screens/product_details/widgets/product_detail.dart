@@ -4,8 +4,8 @@ import 'package:t_store/features/shop/screens/product_details/widgets/product_me
 import 'package:t_store/features/shop/screens/product_details/widgets/rating_share_widget.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import '../../utils/helpers/helper_functions.dart';
-import '../TEST_Flutter/flutter/packages/flutter/lib/material.dart';
-import 'product_attributes.dart';
+import 'package:e_commerce_app/features/shop/screens/product_details/TEST_Flutter/flutter/packages/flutter/lib/material.dart';
+import 'product_attributes.dart' show TProductAttributes;
 
 class ProductDetailScreen extends StatelessWidget {
   const ProductDetailScreen({super.key});
