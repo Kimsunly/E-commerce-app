@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/common/widget/appbar/appbar.dart';
+import 'package:e_commerce_app/common/widget/layouts/grid_layout.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widget/home_appbar.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widget/home_categories.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widget/promo_slider.dart';
@@ -33,7 +34,9 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(height: 10),
 
                   // Search Bar
-                  TSearchContainer(text: 'Fcking search here',), // Fixed text
+                  TSearchContainer(
+                    text: 'Fcking search here',
+                  ), // Fixed text
                   SizedBox(height: 20),
 
                   // CATEGORIES SECTION
@@ -53,7 +56,6 @@ class HomeScreen extends StatelessWidget {
 
                         // Categories List
                         THomeCategories()
-
                       ],
                     ),
                   ),
@@ -62,14 +64,33 @@ class HomeScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(TSizes.defaultSpace),
-              child: TPromoSlider(banners: [TImage.banner1,TImage.banner2,TImage.banner3,TImage.banner4],),
-            ),
+              child: Column(
+                children: [
+                  TPromoSlider(
+                    banners: [
+                      TImage.banner1,
+                      TImage.banner2,
+                      TImage.banner3,
+                      TImage.banner4
+                    ],
+                  ),
+                  const SizedBox(height: TSizes.spaceBtwItems,),
 
-            ProductCardVertical(),
+
+                  TGridlayout( itemBuidler: (_,index) => const ProductCardVertical(),
+                    products: [
+
+                    ],
+
+                  )
+
+
+                ],
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 }
-
