@@ -3,7 +3,6 @@ import 'package:e_commerce_app/features/shop/controlllers/home_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../../../common/widget/custom_shapes/containers/circular_container.dart';
 import '../../../../../common/widget/image/t_rounded_image.dart';
 import '../../../../../utils/constants/colors.dart';

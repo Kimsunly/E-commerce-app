@@ -7,7 +7,6 @@ import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../styles/shadows.dart';
@@ -43,7 +42,7 @@ class ProductCardVertical extends StatelessWidget {
                 children: [
                   // Thumbnail Image
                   TRoundedImage(
-                    imageURL: TImage.product1,
+                    imageURL: TImage.gazelle_indoor_shoes,
                     applyImageRadius: true,
                   ),
 

@@ -6,18 +6,18 @@ import '../products_cart/product_card_vertical.dart';
 class TGridlayout extends StatelessWidget {
   const TGridlayout(
       {super.key,
-      this.mainAxisExtentet = 288,
-      required this.itemBuidler,
-      required this.products});
+      required this.itemCount,
+      this.mainAxisExtentet= 288,
+      required this.itemBuidler});
 
+  final int itemCount;
   final double? mainAxisExtentet;
   final Widget? Function(BuildContext, int) itemBuidler;
-  final List<String> products;
 
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      itemCount: products.length,
+      itemCount: itemCount,
       shrinkWrap: true,
       padding: EdgeInsets.zero,
       physics: const NeverScrollableScrollPhysics(),
@@ -26,7 +26,7 @@ class TGridlayout extends StatelessWidget {
           mainAxisSpacing: TSizes.gridViewSpacing,
           crossAxisSpacing: TSizes.gridViewSpacing,
           mainAxisExtent: mainAxisExtentet),
-      itemBuilder: itemBuidler,
+      itemBuilder: (_, index) => const ProductCardVertical(),
     );
   }
 }
