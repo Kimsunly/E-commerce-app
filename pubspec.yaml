@@ -76,6 +76,6 @@ flutter:
           weight: 600
         - asset: assets/fonts/Poppins-Bold.ttf
           weight: 800
-    - family: iconsax
-      fonts:
-          - asset: assets/fonts/iconsax.ttf
+#    - family: iconsax
+#      fonts:
+#          - asset: assets/fonts/iconsax.ttf
