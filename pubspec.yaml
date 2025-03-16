@@ -56,7 +56,12 @@ flutter:
     - assets/images/animations/
     - assets/icons/categories/
     - assets/images/banners/
-    - assets/images/products/Nike/Style/
+    - assets/images/products/Nike/
+    - assets/images/products/puma/
+    - assets/images/products/jordan/
+    - assets/images/products/Adidas/
+    - assets/images/products/NewBalance/
+    - assets/images/products/asics/
 
   fonts:
     - family: Poppins
@@ -76,6 +81,6 @@ flutter:
           weight: 600
         - asset: assets/fonts/Poppins-Bold.ttf
           weight: 800
-    - family: iconsax
-      fonts:
-          - asset: assets/fonts/iconsax.ttf
+#    - family: iconsax
+#      fonts:
+#          - asset: assets/fonts/iconsax.ttf
