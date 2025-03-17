@@ -4,7 +4,6 @@ import 'package:e_commerce_app/common/widget/text/product_price_text.dart';
 import 'package:e_commerce_app/common/widget/text/product_title_text.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import '../../../utils/constants/colors.dart';

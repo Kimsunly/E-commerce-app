@@ -45,8 +45,8 @@ class ProductDetailScreen extends StatelessWidget {
               trimMode: trimMode.Line,
               trimCollapsedText: 'Show more',
               trimExpandedText: 'Show less',
-              morestyle:const TextStyle(fontSize: 14,fontwigth: FontWeight.w800),
-              lessstyle:const TextStyle(fontSize: 14,fontwigth: FontWeight.w800),
+              morestyle:TextStyle(fontSize: 14,fontwigth: FontWeight.w800),
+              lessstyle:TextStyle(fontSize: 14,fontwigth: FontWeight.w800),
             ),
             /// Reviews
             const Driver(),

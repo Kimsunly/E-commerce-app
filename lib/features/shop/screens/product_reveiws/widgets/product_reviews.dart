@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:t_store/common/widgets/// The code `import
+import 'package:t_store/common/widgets/// The code `import;
 
-class product_review extends StatelessWidget {
+
+
+import '../../../../../utils/constants/colors.dart';
+import '../../../../../utils/constants/sizes.dart';class product_review extends StatelessWidget {
   const product_review({super.key});
   @override
   Widget build(BuildContext context) {
-    return  const Scaffold(
+    return  Scaffold(
         /// ---Appbaar
         appBar: TAppBar(tiltle: text('Reveiws & Ratting ')),
     /// ---Body
@@ -18,12 +21,12 @@ class product_review extends StatelessWidget {
     const Text(
     "Ratings and reviews are verified and are from people who use the same type of device that you use."
     ),
-    const SizedBox(height: TSizes.spaceBetweenItems),
+    SizedBox(height: TSizes.spaceBetweenItems),
 
     /// Overall Product Ratings
-    Row(
+    const Row(
     children: [
-    Expanded(flex: 3, child: const Text('4.8', style: thme.of(context).textTheme.displayLarge)),
+    Expanded(flex: 3, child: Text('4.8', style: theme.of(context).textTheme.displayLarge)),
     Expanded(
     flex: 7,
     child: Text(
@@ -32,7 +35,7 @@ class product_review extends StatelessWidget {
     ),
     ),
     Expanded(
-    EXpanded(flex: 1, child: const Text('4.8', style: thme.of(context).textTheme.bodyMedium)),
+    EXpanded(flex: 1, child: Text('4.8', style: thme.of(context).textTheme.bodyMedium)),
     Expanded(
     flex: 11,
     child: Column(
@@ -55,7 +58,7 @@ class product_review extends StatelessWidget {
     minHeight: 11,
     backgroundColor: TColors.grey,
     borderRadius: BorderRadius.circular(7),
-    valueColor: const AlwaysStoppedAnimation(TColors.primary),
+    valueColor: AlwaysStoppedAnimation(TColors.primary),
      ),
     ),
     ),

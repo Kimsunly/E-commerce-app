@@ -7,26 +7,25 @@ import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/common/widgets/text/product_title_text.dart';
 import 'package:t_store/common/widgets/text/t_brand_title_with_verified_icon.dart';
 
-import '../../TEST_Flutter/flutter/examples/api/lib/material/context_menu/editable_text_toolbar_builder.1.dart';
-import '../../TEST_Flutter/flutter/packages/flutter/lib/cupertino.dart';
-import '../../TEST_Flutter/flutter/packages/flutter/lib/src/material/elevated_button.dart';
+import 'package:e_commerce_app/features/shop/screens/TEST_Flutter/flutter/examples/api/lib/material/context_menu/editable_text_toolbar_builder.1.dart';
+import 'package:e_commerce_app/features/shop/screens/TEST_Flutter/flutter/packages/flutter/lib/cupertino.dart';
+import 'package:e_commerce_app/features/shop/screens/TEST_Flutter/flutter/packages/flutter/lib/src/material/elevated_button.dart';
 import '../../TEST_Flutter/flutter/packages/flutter/test/widgets/list_body_test.dart';
 
 class CartScreen extends StatelessWidget {
-  const CartScreen({Key? key}) : super(key: key);
+  const CartScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: TAppBar( ShowBackAroww:true , title:text('Cart',style: Theme.of(context).textTheme.headlineSmall,),
           body Padding(padding: padding(all:TSizes.defaultSpace),
-      child: SingleChildScrollView(
-        title: Text(
-          'Cart',
-          style: Theme.of(context).textTheme.headlineSmall,
-        ),
-      ),
       body: SingleChildScrollView(
+          bottomNavigationBar :padding (
+              padding const EdgeInsets.all(TSizes.defaultSpace),
+          child :ElevatedButton(onPressed: (){},child: const Text ('checkout \n \$ 200.00',style: TextStyle(fontSize: 20),),
+          )
+      ),
           child: Padding(
             padding: const EdgeInsets.all(TSizes.defaultSpace),
             child: ListView.separated(
@@ -133,13 +132,13 @@ class CartScreen extends StatelessWidget {
               },
             ),
           ),
-          // Checkout Button
-          bottomNavigationBar :padding (
-              padding const EdgeInsets.all(TSizes.defaultSpace),
-          child :ElevatedButton(onPressed: (){},child: const Text ('checkout \n \$ 200.00',style: TextStyle(fontSize: 20),),
-          )
-      ),
-    );
+    ),
+      child: SingleChildScrollView(
+        title: Text(
+          'Cart',
+          style: Theme.of(context).textTheme.headlineSmall,
+        ),
+      );
   }
 }
 
