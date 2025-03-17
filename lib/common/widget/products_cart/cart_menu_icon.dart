@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../utils/constants/colors.dart';
+import '../../../utils/helpers/helper_functions.dart';
 
 class TCartCounterIcon extends StatelessWidget {
   const TCartCounterIcon({
     super.key,
     required this.onPressed,
-    required this.iconColor,
+     this.iconColor= TColors.light,
   });
 
   final VoidCallback onPressed;
@@ -22,7 +23,9 @@ class TCartCounterIcon extends StatelessWidget {
           onPressed: () {},
           icon: Icon(
             Iconsax.shopping_bag,
-            color: TColors.white,
+            color: THelperFunctions.isDarkMode(context)
+                ? TColors.white
+                : TColors.black,
           ),
         ),
         Positioned(

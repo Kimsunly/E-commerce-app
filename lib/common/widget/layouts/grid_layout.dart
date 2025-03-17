@@ -26,7 +26,7 @@ class TGridlayout extends StatelessWidget {
           mainAxisSpacing: TSizes.gridViewSpacing,
           crossAxisSpacing: TSizes.gridViewSpacing,
           mainAxisExtent: mainAxisExtentet),
-      itemBuilder: (_, index) => const ProductCardVertical(),
+      itemBuilder: itemBuidler,
     );
   }
 }
