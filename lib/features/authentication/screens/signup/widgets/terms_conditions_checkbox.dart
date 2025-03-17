@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/sizes.dart';
@@ -25,7 +24,7 @@ class TTermsAndConditionCheckbox extends StatelessWidget {
           TextSpan(
             children: [
               TextSpan(
-                  text: "${TTexts.isAgreeTo}",
+                  text: TTexts.isAgreeTo,
                   style: Theme.of(context).textTheme.bodySmall),
               TextSpan(
                   text: "${TTexts.privacyPolicy} ",
@@ -43,7 +42,7 @@ class TTermsAndConditionCheckbox extends StatelessWidget {
                   )),
               TextSpan(text: "${TTexts.and} ", style: Theme.of(context).textTheme.bodySmall),
               TextSpan(
-                  text: "${TTexts.termsOfUse}",
+                  text: TTexts.termsOfUse,
                   style: Theme.of(context)
                       .textTheme
                       .bodyMedium!

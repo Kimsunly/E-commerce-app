@@ -1,5 +1,4 @@
 import 'dart:core';
-import 'package:flutter/material.dart';
 
 class TImage{
 
@@ -36,6 +35,9 @@ class TImage{
   static const String banner2 = 'assets/images/banners/Black-Friday_web_banner_01.jpg';
   static const String banner3 = 'assets/images/banners/banner_3.jpg';
   static const String banner4 = 'assets/images/banners/1877.jpg';
+
+  // -- Profile
+  static const String user = 'assets/images/user/user.png';
 
   // Products //
   // NIKE

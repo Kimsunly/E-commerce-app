@@ -1,16 +1,12 @@
-import 'package:e_commerce_app/common/widget/appbar/appbar.dart';
 import 'package:e_commerce_app/common/widget/layouts/grid_layout.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widget/home_appbar.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widget/home_categories.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widget/promo_slider.dart';
-import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
-import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../common/widget/custom_shapes/containers/primary_header_container.dart';
 import '../../../../common/widget/custom_shapes/containers/search_container.dart';
-import '../../../../common/widget/image_text_widgets/vertical_image_text.dart';
 import '../../../../common/widget/products_cart/product_card_vertical.dart';
 import '../../../../common/widget/text/sections_heading.dart';
 import '../../../../utils/constants/sizes.dart';
@@ -22,7 +18,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        // Wrap content in a scrollable view
+        // Wrap user in a scrollable view
         child: Column(
           children: [
             // Custom clipped background section
@@ -59,6 +55,7 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
+                  SizedBox(height: TSizes.spaceBtwSections),
                 ],
               ),
             ),
