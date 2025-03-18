@@ -55,7 +55,7 @@ class Storescreen extends StatelessWidget {
                         height: TSizes.spaceBtwItems,
                       ),
                       TSearchContainer(
-                        text: 'What the fck do you want',
+                        text: 'Search your product....',
                         showBorder: false,
                         padding: EdgeInsets.zero,
                       ),

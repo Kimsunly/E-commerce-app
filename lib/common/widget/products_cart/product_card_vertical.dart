@@ -14,7 +14,9 @@ import '../icons/t_circular_icon.dart';
 import '../text/t_brand_title_text.dart';
 
 class ProductCardVertical extends StatelessWidget {
-  const ProductCardVertical({super.key});
+  final String p_image;
+  final String name_product;
+   ProductCardVertical({super.key, required this.p_image, required this.name_product});
 
   get color => null;
 
@@ -43,7 +45,7 @@ class ProductCardVertical extends StatelessWidget {
                 children: [
                   // Thumbnail Image
                   TRoundedImage(
-                    imageURL: TImage.gazelle_indoor_shoes,
+                    imageURL: p_image,
                     applyImageRadius: true,
                   ),
 
@@ -87,7 +89,7 @@ class ProductCardVertical extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   TProductTitleText(
-                    title: 'Balck Nigga',
+                    title: name_product,
                     smallSize: true,
                   ),
                   SizedBox(height: TSizes.spaceBtwItems / 2),

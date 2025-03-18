@@ -11,8 +11,46 @@ import '../../../../common/widget/products_cart/product_card_vertical.dart';
 import '../../../../common/widget/text/sections_heading.dart';
 import '../../../../utils/constants/sizes.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  var products_list = [
+
+    TImage.Nike_Dunk_Low_Retro,
+    TImage.Nike_Air_Force_1_Mid_Off_White,
+    TImage.Puma_Youth_Rickie_Sneake,
+    TImage.Nike_Winflo_10,
+    TImage.ultraboost_1_shoes,
+    TImage.Puma_Up_Mens_White_Mr_Tekkie,
+    TImage.Nike_Sneaker,
+    TImage.Fresh_Foam_X_1080v14,
+    TImage.FuelCell_Rebel_V4,
+    TImage.Nike_Revolution_7,
+    TImage.ultraboost_5x_shoes_1,
+    TImage.Nike_Sneakers_Air_Jordan_4_Retro,
+
+  ];
+  var product_name = [
+    'Nike DunkLow Retro',
+    'Nike AirForce1 MidOffWhite',
+    'Puma YouthRickieSneake',
+    'Nike Winflo10',
+    'ultraboost1 shoes',
+    'Puma Up Mens White MrTekkie',
+    'Nike Sneaker',
+    'Fresh Foam X 1080v14',
+    'FuelCell Rebel V4',
+    'Nike Revolution 7',
+    'ultraboost5x shoes1',
+    'Nike Sneakers AirJordan 4 Retro',
+
+  ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +69,7 @@ class HomeScreen extends StatelessWidget {
 
                   // Search Bar
                   TSearchContainer(
-                    text: 'Fcking search here',
+                    text: 'Search here',
                   ), // Fixed text
                   SizedBox(height: 20),
 
@@ -79,7 +117,11 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceBtwItems,),
 
                   // -- Popular products
-                  TGridlayout(itemCount: 10, itemBuidler: (_,index) => const ProductCardVertical(),)
+                  TGridlayout(itemCount: products_list.length, itemBuidler: (_,index) =>  ProductCardVertical(
+                    p_image:   products_list[index],
+                    name_product: product_name[index],
+
+                  ),)
 
 
                 ],
