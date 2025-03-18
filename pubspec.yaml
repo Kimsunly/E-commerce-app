@@ -38,7 +38,7 @@ dependencies:
 
 #---------------------------- ./ PACKAGES END -------------------------#
 
-  t_store: any
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

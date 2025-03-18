@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/common/widget/image/t_circular_image.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -12,7 +13,7 @@ class TUserProfileTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: const TCircularImage(
+      leading: const TCircularimage(
         image: TImage.user,
         width: 50,
         height: 50,
