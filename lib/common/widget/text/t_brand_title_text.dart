@@ -1,7 +1,5 @@
 import 'package:e_commerce_app/utils/constants/enums.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class TBrandTitletext extends StatelessWidget {
   const TBrandTitletext({

@@ -50,7 +50,9 @@ class _HomeScreenState extends State<HomeScreen> {
     'Nike Sneakers AirJordan 4 Retro',
 
   ];
-
+  var saleta = [
+    '15%','60%','78%','47%','38%','78%','48%','90%','55%','38%','10%','20%',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -120,6 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   TGridlayout(itemCount: products_list.length, itemBuidler: (_,index) =>  ProductCardVertical(
                     p_image:   products_list[index],
                     name_product: product_name[index],
+                    disocunt_tag: saleta[index],
 
                   ),)
 

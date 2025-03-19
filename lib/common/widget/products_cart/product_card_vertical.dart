@@ -3,7 +3,6 @@ import 'package:e_commerce_app/common/widget/image/t_rounded_image.dart';
 import 'package:e_commerce_app/common/widget/text/product_price_text.dart';
 import 'package:e_commerce_app/common/widget/text/product_title_text.dart';
 import 'package:e_commerce_app/common/widget/text/t_brand_title_with_text_verified_icon.dart';
-import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -11,12 +10,12 @@ import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../styles/shadows.dart';
 import '../icons/t_circular_icon.dart';
-import '../text/t_brand_title_text.dart';
 
 class ProductCardVertical extends StatelessWidget {
   final String p_image;
   final String name_product;
-   ProductCardVertical({super.key, required this.p_image, required this.name_product});
+  final String disocunt_tag;
+   const ProductCardVertical({super.key, required this.p_image, required this.name_product, required this.disocunt_tag});
 
   get color => null;
 
@@ -58,7 +57,7 @@ class ProductCardVertical extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: TSizes.sm, vertical: TSizes.xs),
                       child: Text(
-                        '75%',
+                        disocunt_tag,
                         style: Theme.of(context)
                             .textTheme
                             .labelLarge!
