@@ -11,10 +11,8 @@
 
 
 import 'package:e_commerce_app/navigation_menu.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../../utils/constants/sizes.dart';
@@ -75,7 +73,7 @@ class TLoginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () => Get.to(() => NavigationMenu()),
+                onPressed: () => Get.to(() => const NavigationMenu()),
                 child: const Text(TTexts.signIn),
               ),
             ),

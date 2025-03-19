@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
 import '../../../utils/constants/sizes.dart';
-import '../products_cart/product_card_vertical.dart';
 
 class TGridlayout extends StatelessWidget {
   const TGridlayout(
@@ -26,7 +25,7 @@ class TGridlayout extends StatelessWidget {
           mainAxisSpacing: TSizes.gridViewSpacing,
           crossAxisSpacing: TSizes.gridViewSpacing,
           mainAxisExtent: mainAxisExtentet),
-      itemBuilder: (_, index) => const ProductCardVertical(),
+      itemBuilder: itemBuidler,
     );
   }
 }

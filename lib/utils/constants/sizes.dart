@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 
 class TSizes{
   // Padding and margin sizes
@@ -32,7 +31,7 @@ class TSizes{
   static const double imageWidth = 80.0;
 
   // Default Spacing between sections
-  static const double defaultSpace = 24.0;
+  static const double defaultSpace = 15;
   static const double spaceBtwItems = 17.0;
   static const double spaceBtwSections= 32.0;
 

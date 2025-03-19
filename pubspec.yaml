@@ -38,6 +38,8 @@ dependencies:
 
 #---------------------------- ./ PACKAGES END -------------------------#
 
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -48,6 +50,7 @@ flutter:
 
   assets:
     - assets/icons/
+    - assets/images/user/
     - assets/icons/brands/
     - assets/logos/
     - assets/images/on_boarding_images/

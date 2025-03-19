@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../../utils/constants/colors.dart';
-import '../containers/circular_container.dart';
 import 'curved_edges.dart';
 
 class TCurvedEdgeWidget extends StatelessWidget {
@@ -14,7 +12,7 @@ class TCurvedEdgeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipPath(
-      clipper: TcustomCurvedEdges(), // Custom clipper for wave effect
+      clipper: TCustomCurvedEdges(), // Custom clipper for wave effect
       child: child, // Fixed: Removed semicolon
     );
   }
