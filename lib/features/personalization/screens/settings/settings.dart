@@ -1,5 +1,7 @@
 import "package:e_commerce_app/common/widget/layouts/list_tile/settings_menu_tile.dart";
 import "package:flutter/material.dart";
+import "package:get/get.dart";
+import "package:get/get_core/src/get_main.dart";
 import "package:iconsax/iconsax.dart";
 import "../../../../common/widget/appbar/appbar.dart";
 import "../../../../common/widget/custom_shapes/containers/primary_header_container.dart";
@@ -7,6 +9,7 @@ import "../../../../common/widget/layouts/list_tile/user_profile_tile.dart";
 import "../../../../common/widget/text/sections_heading.dart";
 import "../../../../utils/constants/colors.dart";
 import "../../../../utils/constants/sizes.dart";
+import "../profile/profile.dart";
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -27,10 +30,10 @@ class SettingsScreen extends StatelessWidget {
                           style: Theme.of(context)
                               .textTheme
                               .headlineMedium!
-                              .apply(color: TColors.white))),
+                              .apply(color: TColors.white)), showBackArrow: true),
 
                   /// User Profile Card
-                  TUserProfileTile(),
+                  TUserProfileTile(onPressed: () => Get.to(()=> const ProfileScreen()),),
                   const SizedBox(height: TSizes.spaceBtwSections),
                 ],
               ),

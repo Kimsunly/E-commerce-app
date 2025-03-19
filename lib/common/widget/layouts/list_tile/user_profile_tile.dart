@@ -1,15 +1,14 @@
-import 'package:e_commerce_app/common/widget/image/t_circular_image.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/image_strings.dart';
+import '../../image/t_circular_image.dart';
 
 class TUserProfileTile extends StatelessWidget {
   const TUserProfileTile({
-    super.key,
+    super.key, required this.onPressed,
   });
-
+  final VoidCallback? onPressed;
   @override
   Widget build(BuildContext context) {
     return ListTile(
