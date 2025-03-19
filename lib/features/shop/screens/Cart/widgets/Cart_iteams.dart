@@ -1,147 +1,59 @@
-import 'package:flutter/material.dart' show BuildContext, Column, CrossAxisAlignment, EdgeInsets, ElevatedButton, Expanded, Flexible, Icon, ListView, MainAxisSize, NeverScrollableScrollPhysics, Padding, Row, Scaffold, SingleChildScrollView, SizedBox, StatelessWidget, Text, TextSpan, TextStyle, Theme, Widget;
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:iconsax/iconsax.dart';
+import 'package:flutter/material.dart';
+import '../../../../../common/widget/products/cart/add_remove_button.dart';
+import '../../../../../utils/constants/sizes.dart'; // Import the necessary files
 
-import '../../../../../common/widget/appbar/appbar.dart';
-import '../../../../../common/widget/image/t_rounded_image.dart';
-import '../../../../../utils/constants/colors.dart';
-import '../../../../../utils/constants/sizes.dart';
-import '../../brand/brand_products_screen.dart';
+class CartItems extends StatelessWidget {
+  const CartItems({super.key, this.showAddRemoveButtons = true});
 
-class CartScreen extends StatelessWidget {
-  const CartScreen({super.key});
+  final bool showAddRemoveButtons;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: TAppBar(
-        showBackArrow: true,
-        title: Text('Cart', style: Theme.of(context).textTheme.headlineSmall),
-        backgroundColor: TColors.primary, // Set background color here
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(TSizes.defaultSpace),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                "Ratings and reviews are verified and are from people who use the same type of device that you use.",
-              ),
-              SizedBox(height: TSizes.spaceBetweenItems),
-              const TOveralProductRating(),
-              RatingBarIndicator(
-                rating: 4.5,
-                itemCount: 5,
-                unratedColor: TColors.grey,
-                itemBuilder: (_, __) => const Icon(
-                  Iconsax.star,
-                  color: TColors.primary,
-                ),
-              ),
-              ListView.separated(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                separatorBuilder: (_, __) => const SizedBox(height: TSizes.spaceBtwSections),
-                itemCount: 4,
-                itemBuilder: (_, index) {
-                  return Column(
+    return ListView.separated(
+      shrinkWrap: true,
+      itemCount: 10,
+      separatorBuilder: (_, __) => const SizedBox(height: TSizes.spaceBtwSections),
+      itemBuilder: (_, index) {
+        return Column(
+          children: [
+            // Cart Item (replace with the correct widget name like CartItem)
+            const CartItems(),
+            if (showAddRemoveButtons)
+              const SizedBox(height: TSizes.spaceBtwItems),
+            // Add Remove Button Row with total Price
+            if (showAddRemoveButtons)
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
                     children: [
-                      TCartItem(
-                        children: [
-                          TRoundedImage(
-                            imageUrl: 'assets/images/product_image_1.png', // Use a valid image path
-                            width: 60,
-                            height: 60,
-                            padding: const EdgeInsets.all(TSizes.sm),
-                            backgroundColor: TColors.light,
-                            imageURL: "",
-                          ),
-                          const SizedBox(width: TSizes.spaceBtwItems),
-                          Expanded(
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const TBrandTitleWithVerifiedIcon(title: 'Nike'),
-                                Flexible(
-                                  child: ProductTitleText(
-                                    title: 'Black Sports Shoes!',
-                                    maxLines: 1,
-                                  ),
-                                ),
-                                Text.rich(
-                                  TextSpan(
-                                    children: [
-                                      TextSpan(
-                                        text: 'Color: ',
-                                        style: Theme.of(context).textTheme.bodySmall,
-                                      ),
-                                      TextSpan(
-                                        text: 'Green ',
-                                        style: Theme.of(context).textTheme.bodyLarge,
-                                      ),
-                                      TextSpan(
-                                        text: 'Size: ',
-                                        style: Theme.of(context).textTheme.bodySmall,
-                                      ),
-                                      TextSpan(
-                                        text: 'UK 08',
-                                        style: Theme.of(context).textTheme.bodyLarge,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: TSizes.spaceBtwItems),
-                      Row(
-                        children: [
-                          const SizedBox(width: 70),
-                          CircularIcon(
-                            icon: Iconsax.minus,
-                            width: 32,
-                            height: 32,
-                            size: TSizes.md,
-                            color: TColors.black,
-                            backgroundColor: TColors.light,
-                          ),
-                          const SizedBox(width: TSizes.spaceBtwItems),
-                          Text('2', style: Theme.of(context).textTheme.titleSmall),
-                          const SizedBox(width: TSizes.spaceBtwItems),
-                          const CircularIcon(
-                            icon: Iconsax.add,
-                            width: 32,
-                            height: 32,
-                            size: TSizes.md,
-                            color: TColors.white,
-                            backgroundColor: TColors.primary,
-                          ),
-                        ],
-                      ),
+                      // Extra Space
+                      const SizedBox(width: 70),
+                      // Add Remove Buttons
+                      const ProductQuantityWithAddRemoveButton(),
                     ],
-                  );
-                },
+                  ),
+                  // Product total price
+                  const ProductPriceText(price: '256'),
+                ],
               ),
-            ],
-          ),
-        ),
-      ),
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(TSizes.defaultSpace),
-        child: ElevatedButton(
-          onPressed: () {},
-          child: const Text(
-            'Checkout \n \$ 200.00',
-            style: TextStyle(fontSize: 20),
-          ),
-        ),
-      ),
+          ],
+        );
+      },
     );
   }
 }
 
-// Other classes remain the same
+class ProductPriceText extends StatelessWidget {
+  final String price;
+
+  const ProductPriceText({super.key, required this.price});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      '\$$price',
+      style: Theme.of(context).textTheme.bodyLarge,
+    );
+  }
+}

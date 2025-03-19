@@ -1,107 +1,72 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../../../../common/widget/appbar/appbar.dart';
+import '../../../../../common/widget/custom_shapes/containers/rounded_container.dart';
+import '../../../../../utils/constants/colors.dart';
+import '../../../../../utils/constants/sizes.dart';
+import '../../../../../utils/helpers/helper_functions.dart';
 
-class AddNewAddressScreen extends StatelessWidget {
-  const AddNewAddressScreen({super.key});
+class SingleAddress extends StatelessWidget {
+  const SingleAddress({
+    super.key,
+    required this.selectedAddress,
+    required this.address,
+    required this.city,
+    required this.country,
+    required this.onEdit,
+  });
+
+  final bool selectedAddress;
+  final String address;
+  final String city;
+  final String country;
+  final VoidCallback onEdit;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: TAppBar(
-        showBackArrow: true,
-        title: const Text('Add new Address'),
-        backgroundColor: Colors.blue, // Non-constant color, no need for `const` in TAppBar
-      ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(Sizes.defaultSpace),
-          child: Form(
-            child: Column(
+    final bool isDarkMode = THelperFunctions.isDarkMode(context);
+
+    return TRoundedContainer(
+      width: double.infinity,
+      showBorder: true,
+      backgroundColor: selectedAddress
+          ? TColors.primary.withAlpha(50) // Updated from withOpacity(0.2)
+          : Colors.transparent,
+      borderColor: selectedAddress
+          ? Colors.transparent
+          : (isDarkMode ? TColors.darkerGrey : TColors.grey),
+      margin: EdgeInsets.only(bottom: TSizes.spaceBtwItems),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                TextFormField(
-                  decoration: const InputDecoration(
-                    prefixIcon: Icon(Iconsax.user),
-                    labelText: 'Name',
-                  ),
-                ),
-                SizedBox(height: Sizes.spaceBtwInputFields),
-                TextFormField(
-                  decoration: const InputDecoration(
-                    prefixIcon: Icon(Iconsax.mobile),
-                    labelText: 'Phone Number',
-                  ),
-                ),
-                SizedBox(height: Sizes.spaceBtwInputFields),
-                Row(
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Expanded(
-                      child: TextFormField(
-                        decoration: const InputDecoration(
-                          prefixIcon: Icon(Iconsax.building_3),
-                          labelText: 'Street',
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: Sizes.spaceBtwInputFields),
-                    Expanded(
-                      child: TextFormField(
-                        decoration: const InputDecoration(
-                          prefixIcon: Icon(Iconsax.code),
-                          labelText: 'Postal Code',
-                        ),
-                      ),
-                    ),
+                    Text(address, style: Theme.of(context).textTheme.bodyLarge),
+                    const SizedBox(height: 4),
+                    Text("$city, $country", style: Theme.of(context).textTheme.bodyMedium),
                   ],
                 ),
-                SizedBox(height: Sizes.spaceBtwInputFields),
                 Row(
                   children: [
-                    Expanded(
-                      child: TextFormField(
-                        decoration: const InputDecoration(
-                          prefixIcon: Icon(Iconsax.building),
-                          labelText: 'City',
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: Sizes.spaceBtwInputFields),
-                    Expanded(
-                      child: TextFormField(
-                        decoration: const InputDecoration(
-                          prefixIcon: Icon(Iconsax.activity),
-                          labelText: 'State',
-                        ),
-                      ),
+                    if (selectedAddress)
+                      const Icon(Iconsax.tick_circle, color: Colors.green, size: 24),
+                    IconButton(
+                      icon: const Icon(Iconsax.edit, color: Colors.blue),
+                      onPressed: onEdit,
                     ),
                   ],
-                ),
-                SizedBox(height: Sizes.spaceBtwInputFields),
-                TextFormField(
-                  decoration: const InputDecoration(
-                    prefixIcon: Icon(Iconsax.global),
-                    labelText: 'Country',
-                  ),
-                ),
-                SizedBox(height: Sizes.defaultSpace),
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    child: const Text('Save'),
-                  ),
                 ),
               ],
             ),
-          ),
+          ],
         ),
       ),
     );
   }
-}
-
-class Sizes {
-  static double defaultSpace = 16.0; // Example value
-  static double spaceBtwInputFields = 12.0; // Example value
 }

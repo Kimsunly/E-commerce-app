@@ -1,73 +1,143 @@
-import 'package:flutter/material.dart';
 
-import '../../../../common/widget/appbar/appbar.dart';
-import '../../../../common/widget/custom_shapes/containers/rounded_container.dart';
-import '../../../../utils/constants/colors.dart';
-import '../../../../utils/constants/sizes.dart';
-import '../../../../utils/helpers/helper_functions.dart';
+import 'package:flutter/material.dart' show BuildContext, Column, CrossAxisAlignment, EdgeInsets, ElevatedButton, Expanded, Flexible, Icon, ListView, MainAxisSize, NeverScrollableScrollPhysics, Padding, Row, Scaffold, SingleChildScrollView, SizedBox, StatelessWidget, Text, TextSpan, TextStyle, Theme, Widget;
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:iconsax/iconsax.dart';
 
-class CheckoutScreen extends StatelessWidget {
-  const CheckoutScreen({super.key});
+import '../../../../../common/widget/appbar/appbar.dart';
+import '../../../../../common/widget/image/t_rounded_image.dart';
+import '../../../../../utils/constants/colors.dart';
+import '../../../../../utils/constants/sizes.dart';
+import '../brand/brand_products_screen.dart';
+
+class CartScreen extends StatelessWidget {
+  const CartScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
     return Scaffold(
       appBar: TAppBar(
         showBackArrow: true,
-        title: Text('Order Review', style: Theme.of(context).textTheme.headlineSmall),
-        backgroundColor: dark ? TColors.dark : TColors.primary, // Set backgroundColor here
+        title: Text('Cart', style: Theme.of(context).textTheme.headlineSmall),
+        backgroundColor: TColors.primary, // Set background color here
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(TSizes.defaultSpace.toDouble()),
+      body: Padding(
+        padding: const EdgeInsets.all(TSizes.defaultSpace),
+        child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              /// -- Items in Cart
-              const CartItems(showAddRemoveButtons: false),
-              SizedBox(height: TSizes.spaceBtwSections.toDouble()),
-
-              /// -- Coupon TextField
-              TRoundedContainer(
-                showBorder: true,
-                backgroundColor: dark ? TColors.dark : TColors.white,
-                padding: EdgeInsets.only(
-                  top: TSizes.sm.toDouble(),
-                  bottom: TSizes.sm.toDouble(),
-                  right: TSizes.sm.toDouble(),
-                  left: TSizes.md.toDouble(),
-                ),
-                child: Row(
-                  children: [
-                    /// TextField
-                    Flexible(
-                      child: TextFormField(
-                        decoration: const InputDecoration(
-                          hintText: 'Have a promo code? Enter here',
-                          border: InputBorder.none,
-                        ),
-                      ),
-                    ),
-
-                    /// Button
-                    SizedBox(
-                      width: 80,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          foregroundColor: dark
-                              ? Colors.white.withValues(alpha: 128)
-                              : TColors.dark.withValues(alpha: 128),
-                          backgroundColor: Colors.grey.withValues(alpha: 50),
-                          side: BorderSide(color: Colors.grey.withValues(alpha: 25)),
-                        ),
-                        child: const Text('Apply'),
-                      ),
-                    ),
-                  ],
+              const Text(
+                "Ratings and reviews are verified and are from people who use the same type of device that you use.",
+              ),
+              SizedBox(height: TSizes.spaceBetweenItems),
+              const TOveralProductRating(),
+              RatingBarIndicator(
+                rating: 4.5,
+                itemCount: 5,
+                unratedColor: TColors.grey,
+                itemBuilder: (_, __) => const Icon(
+                  Iconsax.star,
+                  color: TColors.primary,
                 ),
               ),
+              ListView.separated(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                separatorBuilder: (_, __) => const SizedBox(height: TSizes.spaceBtwSections),
+                itemCount: 4,
+                itemBuilder: (_, index) {
+                  return Column(
+                    children: [
+                      TCartItem(
+                        children: [
+                          TRoundedImage(
+                            imageUrl: 'assets/images/product_image_1.png', // Use a valid image path
+                            width: 60,
+                            height: 60,
+                            padding: const EdgeInsets.all(TSizes.sm),
+                            backgroundColor: TColors.light,
+                            imageURL: "",
+                          ),
+                          const SizedBox(width: TSizes.spaceBtwItems),
+                          Expanded(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const TBrandTitleWithVerifiedIcon(title: 'Nike'),
+                                Flexible(
+                                  child: ProductTitleText(
+                                    title: 'Black Sports Shoes!',
+                                    maxLines: 1,
+                                  ),
+                                ),
+                                Text.rich(
+                                  TextSpan(
+                                    children: [
+                                      TextSpan(
+                                        text: 'Color: ',
+                                        style: Theme.of(context).textTheme.bodySmall,
+                                      ),
+                                      TextSpan(
+                                        text: 'Green ',
+                                        style: Theme.of(context).textTheme.bodyLarge,
+                                      ),
+                                      TextSpan(
+                                        text: 'Size: ',
+                                        style: Theme.of(context).textTheme.bodySmall,
+                                      ),
+                                      TextSpan(
+                                        text: 'UK 08',
+                                        style: Theme.of(context).textTheme.bodyLarge,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: TSizes.spaceBtwItems),
+                      Row(
+                        children: [
+                          const SizedBox(width: 70),
+                          CircularIcon(
+                            icon: Iconsax.minus,
+                            width: 32,
+                            height: 32,
+                            size: TSizes.md,
+                            color: TColors.black,
+                            backgroundColor: TColors.light,
+                          ),
+                          const SizedBox(width: TSizes.spaceBtwItems),
+                          Text('2', style: Theme.of(context).textTheme.titleSmall),
+                          const SizedBox(width: TSizes.spaceBtwItems),
+                          const CircularIcon(
+                            icon: Iconsax.add,
+                            width: 32,
+                            height: 32,
+                            size: TSizes.md,
+                            color: TColors.white,
+                            backgroundColor: TColors.primary,
+                          ),
+                        ],
+                      ),
+                    ],
+                  );
+                },
+              ),
             ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(TSizes.defaultSpace),
+        child: ElevatedButton(
+          onPressed: () {},
+          child: const Text(
+            'Checkout \n \$ 200.00',
+            style: TextStyle(fontSize: 20),
           ),
         ),
       ),
@@ -75,15 +145,4 @@ class CheckoutScreen extends StatelessWidget {
   }
 }
 
-class CartItems extends StatelessWidget {
-  final bool showAddRemoveButtons;
-  const CartItems({required this.showAddRemoveButtons, super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(10.0),
-      child: Text("Cart Items Placeholder"),
-    );
-  }
-}
+// Other classes remain the same
